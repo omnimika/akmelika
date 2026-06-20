@@ -1,4 +1,4 @@
-export type AudioFormat = "mp3" | "wav";
+export type AudioFormat = "mp3" | "wav" | "flac";
 
 export type Track = {
   id: string;
@@ -15,8 +15,36 @@ export type Album = {
   folderName: string;
   coverFileName: string;
   description?: string;
+  bandcampUrl?: string;
   tracks: Track[];
 };
+
+const TWILIGHT_LOUNGE_2013_TRACKS: Track[] = [
+  {
+    id: "01",
+    number: 1,
+    title: "#1",
+    fileName: "AkmelikA - Twilight Lounge pt.1 - 01 #1",
+  },
+  {
+    id: "02",
+    number: 2,
+    title: "#2",
+    fileName: "AkmelikA - Twilight Lounge pt.1 - 02 #2",
+  },
+  {
+    id: "03",
+    number: 3,
+    title: "#3",
+    fileName: "AkmelikA - Twilight Lounge pt.1 - 03 #3",
+  },
+  {
+    id: "04",
+    number: 4,
+    title: "#6-7",
+    fileName: "AkmelikA - Twilight Lounge pt.1 - 04 #6-7",
+  },
+];
 
 const AKMELIKA_2020_TRACKS: Track[] = [
   { id: "01", number: 1, title: "Sliding Along", fileName: "01 Sliding Along" },
@@ -31,6 +59,18 @@ const AKMELIKA_2020_TRACKS: Track[] = [
 
 export const albums: Album[] = [
   {
+    slug: "twilight-lounge-vol-1",
+    title: "Twilight Lounge, Vol.1",
+    year: 2013,
+    artist: "AkmelikA",
+    folderName: "2013 Twilight Lounge pt.1",
+    coverFileName: "cover.jpg",
+    bandcampUrl: "https://akmelika.bandcamp.com/album/twilight-lounge-vol-1",
+    description:
+      "A side-project filled with summer vibes and careless motion — the first part of an approximately 13-song album, released in puzzle order.",
+    tracks: TWILIGHT_LOUNGE_2013_TRACKS,
+  },
+  {
     slug: "akmelika-2020",
     title: "AkmelikA",
     year: 2020,
@@ -38,7 +78,7 @@ export const albums: Album[] = [
     folderName: "2020 Akmelika",
     coverFileName: "ALBUM COVER.jpg",
     description:
-      "Self-titled debut album — eight tracks spanning experimental rock, noise, and lounge-inflected textures.",
+      "Self-titled album — eight tracks spanning experimental rock, noise, and lounge-inflected textures.",
     tracks: AKMELIKA_2020_TRACKS,
   },
 ];

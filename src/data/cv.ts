@@ -174,7 +174,13 @@ export const compositionCredits: Credit[] = [
 ];
 
 export const bandReleases = [
-  { year: 2013, title: "Twilight Lounge vol. 1", status: "released" },
+  {
+    year: 2013,
+    title: "Twilight Lounge, Vol.1",
+    status: "released",
+    slug: "twilight-lounge-vol-1",
+    href: "https://akmelika.bandcamp.com/album/twilight-lounge-vol-1",
+  },
   { year: 2020, title: "AkmelikA", status: "released", slug: "akmelika-2020" },
   { year: 2024, title: "Rocks", status: "upcoming" },
   { year: 2024, title: "Singles + unreleased", status: "in-progress" },

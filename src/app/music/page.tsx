@@ -38,7 +38,7 @@ export default function MusicPage() {
                   <p className="text-sm text-zinc-500">{release.year}</p>
                   <p className="mt-1 font-medium text-zinc-100">{release.title}</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.15em] text-zinc-400">
                     {release.status.replace("-", " ")}
                   </span>
@@ -49,6 +49,16 @@ export default function MusicPage() {
                     >
                       Open album
                     </Link>
+                  )}
+                  {"href" in release && release.href && (
+                    <a
+                      href={release.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-zinc-400 transition hover:text-zinc-200"
+                    >
+                      Bandcamp
+                    </a>
                   )}
                 </div>
               </li>

@@ -20,7 +20,7 @@ export function AlbumCard({ album }: { album: Album }) {
           <h3 className="mt-2 text-xl font-semibold text-zinc-50">{album.title}</h3>
           <p className="mt-1 text-sm text-zinc-400">{album.tracks.length} tracks</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => playAlbum(album)}
@@ -34,6 +34,16 @@ export function AlbumCard({ album }: { album: Album }) {
           >
             View
           </Link>
+          {album.bandcampUrl && (
+            <a
+              href={album.bandcampUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/5"
+            >
+              Bandcamp
+            </a>
+          )}
         </div>
       </div>
     </article>

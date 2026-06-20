@@ -21,6 +21,16 @@ export function TrackList({ album }: { album: Album }) {
           {album.description && (
             <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-400">{album.description}</p>
           )}
+          {album.bandcampUrl && (
+            <a
+              href={album.bandcampUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex text-sm text-amber-300 transition hover:text-amber-200"
+            >
+              Listen on Bandcamp →
+            </a>
+          )}
         </div>
       </div>
 
